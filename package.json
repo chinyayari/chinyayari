@@ -1,0 +1,45 @@
+{
+  "name": "study-project",
+  "version": "1.0.0",
+  "description": "Куплю. Продам",
+  "main": "./src/service/service.js",
+  "scripts": {
+    "start": "cross-env LOG_LEVEL=error node -r dotenv/config ./src/service/service.js > ./src/service/logs/app.log 2> ./src/service/logs/error.log --server",
+    "start::debug": "cross-env LOG_LEVEL=debug NODE_ENV=development node -r dotenv/config ./src/service/service.js > ./src/service/logs/app.log 2> ./src/service/logs/error.log --server",
+    "test::rest": "jest",
+    "lint": "eslint --ext .js src/",
+    "lint:fix": "eslint --fix --ext .js src/",
+    "start.dev": "nodemon -r dotenv/config ./src/service/service.js --server",
+    "start-front-server": "nodemon -r dotenv/config ./src/express/express.js"
+  },
+  "author": "Polonskii Sergei",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "7.24.0",
+    "eslint-config-htmlacademy": "0.6.0",
+    "jest": "26.6.3",
+    "nodemon": "2.0.7",
+    "pino-pretty": "4.7.1",
+    "sqlite3": "5.0.2",
+    "supertest": "6.1.3"
+  },
+  "dependencies": {
+    "axios": "0.21.1",
+    "bcrypt": "5.0.1",
+    "body-parser": "1.19.0",
+    "chalk": "4.1.0",
+    "connect-session-sequelize": "7.1.1",
+    "cross-env": "7.0.3",
+    "csurf": "1.11.0",
+    "dotenv": "10.0.0",
+    "express": "4.17.1",
+    "express-session": "1.17.2",
+    "joi": "17.4.2",
+    "multer": "1.4.3",
+    "nanoid": "3.1.22",
+    "pg": "8.6.0",
+    "pino": "6.11.3",
+    "pug": "3.0.2",
+    "sequelize": "6.6.5"
+  }
+}
